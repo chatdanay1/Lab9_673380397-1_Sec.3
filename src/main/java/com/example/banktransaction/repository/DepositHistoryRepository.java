@@ -1,0 +1,10 @@
+package com.example.banktransaction.repository;
+
+import com.example.banktransaction.entity.DepositHistory;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface DepositHistoryRepository extends JpaRepository<DepositHistory, Long> {
+    List<DepositHistory> findByAccountIdOrderByDepositedAtDesc(Long accountId);
+}
